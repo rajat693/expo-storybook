@@ -10,21 +10,24 @@ const meta = {
   args: {
     text: "Hello world",
   },
-  decorators: [
-    (Story) => (
-      <View style={{ padding: 16 }}>
-        <Story />
-      </View>
-    ),
-  ],
-} satisfies Meta<typeof MyButton>;
+  // decorators: [
+  //   (Story) => (
+  //     <View style={{ padding: 16 }}>
+  //       <Story />
+  //     </View>
+  //   ),
+  // ],
+  // } satisfies Meta<typeof MyButton>;
+};
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
+// type Story = StoryObj<typeof meta>;
 
-export const Basic: Story = {
+// export const Basic: Story = {
+export const Basic = {
   args: {
-    onPress: action("onPress"),
+    // onPress: action("onPress"),
+    onPress: console.log("button pressed"),
   },
 };
