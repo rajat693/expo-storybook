@@ -1,13 +1,15 @@
-import { StyleSheet, Text, View } from "react-native";
-
 import "@/global.css";
 import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider";
+import { Text } from "./components/ui/text";
+import { StyleSheet, View } from "react-native";
 
 function App() {
   return (
     <GluestackUIProvider mode="light">
       <View style={styles.container}>
-        <Text>Open up App.tsx to start working on your app!</Text>
+        <Text className="text-warning-600" size="xl">
+          Open up App.tsx to start working on your app!
+        </Text>
       </View>
     </GluestackUIProvider>
   );
