@@ -4,7 +4,6 @@ const meta = {
   title: "MyAlert",
   component: AlertBasic,
 };
-
 export default meta;
 
 export const Basic = {

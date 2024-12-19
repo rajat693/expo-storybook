@@ -19,7 +19,6 @@ const meta = {
   // ],
   // } satisfies Meta<typeof MyButton>;
 };
-
 export default meta;
 
 // type Story = StoryObj<typeof meta>;
