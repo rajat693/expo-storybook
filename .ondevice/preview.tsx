@@ -25,19 +25,24 @@
 
 // export default preview;
 
-
-
 import React from "react";
-import { withBackgrounds } from "@storybook/addon-ondevice-backgrounds";
 import type { Preview } from "@storybook/react";
 import { GluestackUIProvider } from "../components/ui/gluestack-ui-provider";
+import { View } from "react-native";
 
 const preview: Preview = {
   decorators: [
-    withBackgrounds,
     (Story) => (
       <GluestackUIProvider>
-        <Story />
+        <View
+          style={{
+            flex: 1,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Story />
+        </View>
       </GluestackUIProvider>
     ),
   ],

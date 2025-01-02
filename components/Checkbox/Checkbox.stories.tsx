@@ -3,10 +3,6 @@ import CheckboxBasic from "./Checkbox";
 const meta = {
   title: "MyCheckbox",
   component: CheckboxBasic,
-};
-export default meta;
-
-export const Basic = {
   argTypes: {
     size: {
       control: "select",
@@ -29,6 +25,10 @@ export const Basic = {
       options: [true, false],
     },
   },
+};
+export default meta;
+
+export const Basic = {
   args: {
     size: "md",
     isDisabled: false,

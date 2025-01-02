@@ -1,7 +1,7 @@
 import "@/global.css";
 import { GluestackUIProvider } from "@/components/ui/gluestack-ui-provider";
 import { Text } from "./components/ui/text";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Platform } from "react-native";
 
 function App() {
   return (
@@ -18,7 +18,11 @@ function App() {
 let AppEntryPoint = App;
 
 if (process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === "true") {
-  AppEntryPoint = require("./.ondevice").default;
+  if (Platform.OS === "web") {
+    AppEntryPoint = require("./.storybook").default;
+  } else {
+    AppEntryPoint = require("./.ondevice").default;
+  }
 }
 
 const styles = StyleSheet.create({

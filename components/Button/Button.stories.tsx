@@ -1,7 +1,3 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import React from "react";
-import { View } from "react-native";
 import { MyButton } from "./Button";
 
 const meta = {
@@ -10,23 +6,17 @@ const meta = {
   args: {
     text: "Hello world",
   },
-  // decorators: [
-  //   (Story) => (
-  //     <View style={{ padding: 16 }}>
-  //       <Story />
-  //     </View>
-  //   ),
-  // ],
-  // } satisfies Meta<typeof MyButton>;
 };
 export default meta;
 
-// type Story = StoryObj<typeof meta>;
-
-// export const Basic: Story = {
 export const Basic = {
   args: {
-    // onPress: action("onPress"),
-    onPress: console.log("button pressed"),
+    onPress: console.log("button1 pressed"),
+  },
+};
+
+export const Basic2 = {
+  args: {
+    onPress: console.log("button2 pressed"),
   },
 };

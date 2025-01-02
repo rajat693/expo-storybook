@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 32,
     paddingVertical: 8,
     backgroundColor: "purple",
-    alignSelf: "flex-start",
     borderRadius: 8,
   },
   text: { color: "white", fontSize: 16, fontWeight: "bold" },

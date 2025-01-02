@@ -5,23 +5,6 @@ module.exports = {
   darkMode: "media",
   content: ["App.{tsx,jsx,ts,js}", "components/**/*.{tsx,jsx,ts,js}"],
   presets: [require("nativewind/preset")],
-  safelist: [
-    "gap-x-2",
-    "gap-y-6",
-    "pl-4",
-    "flex-wrap",
-    "mb-12",
-    "basis-[10%]",
-    "font-extrablack",
-    "text-2xs",
-    {
-      pattern:
-        /bg-(primary|secondary|tertiary|error|success|warning|muted|info|typography|outline|background|indicator)-(0|50|100|200|300|400|500|600|700|800|900|950|light|dark|white|gray|black|error|warning|success|muted|info|primary)/,
-    },
-    {
-      pattern: /shadow-(hard|soft)-(1|2|3|4|5)/,
-    },
-  ],
   theme: {
     extend: {
       colors: {

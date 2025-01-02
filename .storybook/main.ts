@@ -1,26 +1,11 @@
-/** @type{import("@storybook/react-webpack5").StorybookConfig} */
-module.exports = {
-  stories: [
-    "../components/**/*.stories.mdx",
-    "../components/**/*.stories.@(js|jsx|ts|tsx)",
-  ],
+import { StorybookConfig } from "@storybook/react-native";
 
+const main: StorybookConfig = {
+  stories: ["../components/**/*.stories.?(ts|tsx|js|jsx)"],
   addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-react-native-web",
-    "@storybook/addon-webpack5-compiler-babel",
-    "@chromatic-com/storybook"
+    "@storybook/addon-ondevice-controls",
+    "@storybook/addon-ondevice-actions",
   ],
-
-  framework: {
-    name: "@storybook/react-webpack5",
-    options: {},
-  },
-
-  docs: {},
-
-  typescript: {
-    reactDocgen: "react-docgen-typescript"
-  }
 };
+
+export default main;

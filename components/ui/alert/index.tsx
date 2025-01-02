@@ -2,16 +2,16 @@
 import { createAlert } from "@gluestack-ui/alert";
 import { View, Text } from "react-native";
 import { tva } from "@gluestack-ui/nativewind-utils/tva";
-// import {
-//   withStyleContext,
-//   useStyleContext,
-// } from "@gluestack-ui/nativewind-utils/withStyleContext";
+import {
+  withStyleContext,
+  useStyleContext,
+} from "@gluestack-ui/nativewind-utils/withStyleContext";
 import React from "react";
 import { cssInterop } from "nativewind";
 import type { VariantProps } from "@gluestack-ui/nativewind-utils";
 import { PrimitiveIcon, UIIcon } from "@gluestack-ui/icon";
 
-// const SCOPE = "ALERT";
+const SCOPE = "ALERT";
 
 const alertStyle = tva({
   base: "items-center py-3 px-4 rounded-md flex-row gap-2 border-outline-100",
@@ -106,8 +106,8 @@ const alertIconStyle = tva({
 });
 
 export const UIAlert = createAlert({
-  // Root: withStyleContext(View, SCOPE),
-  Root: View,
+  Root: withStyleContext(View, SCOPE),
+  // Root: View,
   Text: Text,
   Icon: UIIcon,
 });
@@ -136,7 +136,7 @@ const Alert = React.forwardRef<React.ElementRef<typeof UIAlert>, IAlertProps>(
     return (
       <UIAlert
         className={alertStyle({ action, variant, class: className })}
-        // context={{ variant, action }}
+        context={{ variant, action }}
         ref={ref}
         {...props}
       />
@@ -166,8 +166,8 @@ const AlertText = React.forwardRef<
     },
     ref
   ) => {
-    // const { action: parentAction } = useStyleContext(SCOPE);
-    const parentAction = "success";
+    const { action: parentAction } = useStyleContext(SCOPE);
+    // const parentAction = "success";
     return (
       <UIAlert.Text
         className={alertTextStyle({
@@ -201,8 +201,8 @@ const AlertIcon = React.forwardRef<
   React.ElementRef<typeof UIAlert.Icon>,
   IAlertIconProps
 >(({ className, size = "md", ...props }, ref) => {
-  // const { action: parentAction } = useStyleContext(SCOPE);
-  const parentAction = "success";
+  const { action: parentAction } = useStyleContext(SCOPE);
+  // const parentAction = "success";
 
   if (typeof size === "number") {
     return (

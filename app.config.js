@@ -1,6 +1,6 @@
 export default ({ config }) => ({
   ...config,
-  name: "HelloWorld",
+  name: "expo-storybook",
   slug: "expo-template-blank-typescript",
   version: "1.0.0",
   orientation: "portrait",

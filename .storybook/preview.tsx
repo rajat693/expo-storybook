@@ -1,5 +1,3 @@
-// import "@/global.css";
-// // import "../styles/globals.scss";
 // import type { Preview } from "@storybook/react";
 
 // const preview: Preview = {
@@ -17,13 +15,13 @@
 // };
 
 // export default preview;
+//the above one is default
 
-
-
+//wrapped with gluestack-ui-provider
 import React from "react";
-import "@/global.css";
 import type { Preview } from "@storybook/react";
 import { GluestackUIProvider } from "../components/ui/gluestack-ui-provider";
+import { View } from "react-native";
 
 const preview: Preview = {
   parameters: {
@@ -36,8 +34,16 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <GluestackUIProvider>
-        <Story />
+      <GluestackUIProvider mode="dark">
+        <View
+          style={{
+            flex: 1,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Story />
+        </View>
       </GluestackUIProvider>
     ),
   ],
